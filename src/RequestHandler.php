@@ -2,6 +2,10 @@
 
 require_once("actions.php");
 
+/**
+ * Handles all incomming requests to the server. The action code is sent by the client as url parameter.
+ * The action code is important to determine which kind of action to take
+ */
 
 $output = array('inputs' => $_POST);
 
@@ -16,7 +20,7 @@ if (isset($_REQUEST['action_code'])) {
             break;
         case CODE_LOGIN_REGISTRAR: {
                 $output[KEY_SUBMITTED] = isset($_POST['submit']);
-                $output[KEY_SUCCESS] = loginRegistrar();
+                loginRegistrar();
             }
             break;
         case CODE_CREATE_COURSE: {
@@ -40,7 +44,7 @@ if (isset($_REQUEST['action_code'])) {
             break;
         case CODE_LOGIN_STUDENT: {
                 $output[KEY_SUBMITTED] = isset($_POST['submit']);
-                $output[KEY_SUCCESS] = loginStudent();
+                loginStudent();
             }
             break;
         case CODE_APPLY_COURSE: {
@@ -63,5 +67,3 @@ if (isset($_REQUEST['action_code'])) {
             break;
     }
 }
-
-require_once('views.php');

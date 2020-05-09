@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Reders the views depending on the action code sent with the request. If not action code is found,
+ * then the default view rendered i.e. the student login view
+ */
+
 $actionCode = isset($_REQUEST['action_code']) ? $_REQUEST['action_code'] : CODE_LOGIN_STUDENT;
 switch ($actionCode) {
     case CODE_REGISTER_REGISTRAR: {

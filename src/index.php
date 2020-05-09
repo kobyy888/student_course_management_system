@@ -1,3 +1,4 @@
+<?php require_once('RequestHandler.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +9,7 @@
 </head>
 
 <body>
-    <?php
-    require_once('RequestHandler.php');
-    ?>
+    <?php require_once("views.php"); ?>
 </body>
 
 </html>
